@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Comite de Inversion Personal</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">CIO personal</p>
+        <h1>Comite de Inversion Personal</h1>
+      </div>
+      <div class="top-actions">
+        <button id="refreshBtn" class="primary">Actualizar analisis</button>
+        <button id="logBtn" class="secondary">Registrar decision</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="status-grid">
+        <article class="metric decision">
+          <span>Accion recomendada</span>
+          <strong id="action">Cargando...</strong>
+          <small id="confidence">Nivel de confianza: -</small>
+        </article>
+        <article class="metric">
+          <span>Caja excedente invertible</span>
+          <strong id="surplus">$0 COP</strong>
+          <small id="liquidityAfter">Caja despues: -</small>
+        </article>
+        <article class="metric">
+          <span>VOO</span>
+          <strong id="vooPrice">-</strong>
+          <small id="vooDrawdown">Caida desde maximo: -</small>
+        </article>
+        <article class="metric">
+          <span>Riesgo</span>
+          <strong id="riskLevel">- / 10</strong>
+          <small id="dataQuality">Datos: -</small>
+        </article>
+      </section>
+
+      <section class="workspace">
+        <form id="positionForm" class="panel form-panel">
+          <div class="panel-title">
+            <div>
+              <p class="eyebrow">Fuente interna</p>
+              <h2>Posicion financiera</h2>
+            </div>
+            <button type="submit" class="secondary">Guardar</button>
+          </div>
+          <div class="form-grid">
+            <label>Caja COP<input name="cash_cop" type="number" min="0" step="1000"></label>
+            <label>Caja USD<input name="cash_usd" type="number" min="0" step="1"></label>
+            <label>Fondo emergencia actual<input name="emergency_fund_current" type="number" min="0" step="1000"></label>
+            <label>Fondo emergencia objetivo<input name="emergency_fund_target" type="number" min="0" step="1000"></label>
+            <label>Ingresos del mes<input name="monthly_income" type="number" min="0" step="1000"></label>
+            <label>Gastos fijos<input name="monthly_expenses_fixed" type="number" min="0" step="1000"></label>
+            <label>Gastos variables<input name="monthly_expenses_variable" type="number" min="0" step="1000"></label>
+            <label>Gastos pendientes<input name="monthly_expenses_pending" type="number" min="0" step="1000"></label>
+            <label>Deuda activa<input name="debt_balance" type="number" min="0" step="1000"></label>
+            <label>Tasa deuda anual %<input name="debt_interest_rate" type="number" min="0" step="0.1"></label>
+            <label>Ahorro proyectado<input name="projected_monthly_savings" type="number" min="0" step="1000"></label>
+            <label>Ahorro real<input name="actual_monthly_savings" type="number" min="0" step="1000"></label>
+            <label>Liquidez minima<input name="minimum_liquidity_required" type="number" min="0" step="1000"></label>
+            <label>Meta mensual inversion<input name="monthly_investment_goal" type="number" min="0" step="1000"></label>
+          </div>
+          <div class="holdings-editor">
+            <div class="panel-title compact">
+              <div>
+                <p class="eyebrow">Cartera editable</p>
+                <h2>Posiciones</h2>
+              </div>
+            </div>
+            <div class="holdings-grid header">
+              <span>ETF</span>
+              <span>Cantidad</span>
+              <span>Precio promedio</span>
+              <span>Peso objetivo</span>
+            </div>
+            <div id="holdingsInputs"></div>
+          </div>
+        </form>
+
+        <section class="panel">
+          <div class="panel-title">
+            <div>
+              <p class="eyebrow">Datos - interpretacion - decision</p>
+              <h2>Analisis CIO</h2>
+            </div>
+          </div>
+          <div id="analysis" class="analysis"></div>
+        </section>
+      </section>
+
+      <section class="panel">
+        <div class="panel-title">
+          <div>
+            <p class="eyebrow">Mercado</p>
+            <h2>Datos gratuitos conectados</h2>
+          </div>
+          <span id="updatedAt" class="timestamp">-</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Activo</th>
+                <th>Precio</th>
+                <th>Dia</th>
+                <th>Semana</th>
+                <th>Mes</th>
+                <th>Maximo</th>
+                <th>RSI</th>
+                <th>MM200</th>
+              </tr>
+            </thead>
+            <tbody id="marketRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="workspace bottom">
+        <section class="panel">
+          <div class="panel-title">
+            <div>
+              <p class="eyebrow">Cartera</p>
+              <h2>Asignacion y desviaciones</h2>
+            </div>
+          </div>
+          <div id="portfolioRows" class="portfolio-list"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-title">
+            <div>
+              <p class="eyebrow">Bitacora</p>
+              <h2>Decisiones registradas</h2>
+            </div>
+          </div>
+          <div id="decisionLog" class="log-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
