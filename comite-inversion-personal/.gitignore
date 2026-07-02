@@ -1,0 +1,13 @@
+node_modules/
+npm-debug.log*
+
+# Local financial data. Keep private.
+data/*.json
+!data/.gitkeep
+!data/financial-position.example.json
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
