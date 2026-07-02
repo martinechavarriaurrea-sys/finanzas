@@ -1,0 +1,47 @@
+{
+  "cash_cop": 0,
+  "cash_usd": 0,
+  "emergency_fund_current": 0,
+  "emergency_fund_target": 0,
+  "monthly_income": 0,
+  "monthly_expenses_fixed": 0,
+  "monthly_expenses_variable": 0,
+  "monthly_expenses_pending": 0,
+  "debt_balance": 0,
+  "debt_interest_rate": 0,
+  "upcoming_payments": 0,
+  "projected_monthly_savings": 0,
+  "actual_monthly_savings": 0,
+  "minimum_liquidity_required": 0,
+  "monthly_investment_goal": 0,
+  "portfolio": [
+    {
+      "ticker": "VOO",
+      "quantity": 0,
+      "average_price_usd": 0,
+      "target_weight": 70,
+      "total_contributions_usd": 0
+    },
+    {
+      "ticker": "VXUS",
+      "quantity": 0,
+      "average_price_usd": 0,
+      "target_weight": 15,
+      "total_contributions_usd": 0
+    },
+    {
+      "ticker": "BND",
+      "quantity": 0,
+      "average_price_usd": 0,
+      "target_weight": 10,
+      "total_contributions_usd": 0
+    },
+    {
+      "ticker": "QQQM",
+      "quantity": 0,
+      "average_price_usd": 0,
+      "target_weight": 5,
+      "total_contributions_usd": 0
+    }
+  ]
+}
